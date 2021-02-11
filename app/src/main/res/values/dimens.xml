@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="indent_1">10dp</dimen>
+    <dimen name="indent_2">20dp</dimen>
+    <dimen name="indent_3">30dp</dimen>
+    <dimen name="indent_4">40dp</dimen>
+    <dimen name="indent_5">50dp</dimen>
+
+    <dimen name="c_height_1">30dp</dimen>
+    <dimen name="c_height_2">30dp</dimen>
+</resources>

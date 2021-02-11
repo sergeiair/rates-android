@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RatesPal" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/darkest</item>
+
+    </style>
+
+    <style name="SignInput">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">@dimen/indent_1</item>
+        <item name="android:paddingBottom">@dimen/indent_1</item>
+        <item name="android:textColor">@color/lightest</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColorHint">@color/accent_2_hint</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="Accent1Line2x">
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/accent_1</item>
+    </style>
+
+    <style name="Accent1Line1x">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/accent_1</item>
+    </style>
+</resources>
