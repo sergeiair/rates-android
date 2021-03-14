@@ -6,4 +6,6 @@ abstract class BaseFragment: Fragment() {
 
     abstract fun bindEvents()
 
+    abstract fun observe()
+
 }

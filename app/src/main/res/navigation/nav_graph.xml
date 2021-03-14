@@ -8,18 +8,25 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.sz.ratespal.ui.login.LoginFragment"
-        android:label="Characters"
+        android:label="Login"
         tools:layout="@layout/fragment_login" >
-
             <action
-                android:id="@+id/action_charactersFragment_to_characterDetailFragment"
+                android:id="@+id/action_loginFragment_to_overviewFragment"
+                app:destination="@id/overviewFragment" />
+            <action
+                android:id="@+id/action_loginFragment_to_registerFragment"
                 app:destination="@id/registerFragment" />
-
     </fragment>
 
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.sz.ratespal.ui.register.RegisterFragment"
-        android:label="Character Detail"
+        android:label="Register"
         tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.sz.ratespal.ui.overview.OverviewFragment"
+        android:label="Overview"
+        tools:layout="@layout/fragment_overview" />
 </navigation>

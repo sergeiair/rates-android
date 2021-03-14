@@ -2,7 +2,6 @@ package com.sz.ratespal.api.sign
 
 import com.sz.ratespal.api.base.BaseApiInteractor
 import com.sz.ratespal.entities.LoginRequest
-import timber.log.Timber
 import javax.inject.Inject
 
 class SignApiInteractor @Inject constructor(
