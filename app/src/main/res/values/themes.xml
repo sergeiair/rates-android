@@ -21,6 +21,21 @@
         <item name="android:background">@color/transparent</item>
     </style>
 
+    <style name="AppButton">
+        <item name="android:layout_height">@dimen/c_height_2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/darkest</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="SignButton" parent="AppButton">
+        <item name="android:elevation">1dp</item>
+        <item name="android:background">@drawable/button_accent_1_rounded</item>
+    </style>
+
     <style name="Accent1Line2x">
         <item name="android:layout_height">2dp</item>
         <item name="android:layout_width">match_parent</item>
@@ -31,5 +46,11 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@color/accent_1</item>
+    </style>
+
+    <style name="Accent2Line1x">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/accent_2</item>
     </style>
 </resources>
