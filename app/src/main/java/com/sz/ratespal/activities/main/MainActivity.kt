@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import com.sz.ratespal.App
 import com.sz.ratespal.R
 import com.sz.ratespal.entities.User
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity(), Navigator {
 
     override fun navigateToAuthorizedArea(user: User?) {
         if (user?.token?.isNotEmpty() == true) {
+            App.token = user.token
             navigate(R.id.overviewFragment)
         }
     }

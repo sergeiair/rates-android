@@ -11,8 +11,7 @@ import com.sz.ratespal.activities.main.Navigator
 import com.sz.ratespal.api.sign.SignApiInteractor
 import com.sz.ratespal.databinding.FragmentLoginBinding
 import com.sz.ratespal.ui.base.BaseFragment
-import com.sz.ratespal.ui.shared.UserViewViewModel
-import com.sz.ratespal.utils.Print
+import com.sz.ratespal.ui.shared.UserViewModel
 import com.sz.ratespal.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
@@ -26,7 +25,7 @@ class LoginFragment: BaseFragment() {
     lateinit var signApiInteractor: SignApiInteractor
 
     private var binding: FragmentLoginBinding by autoCleared()
-    private val viewModel: UserViewViewModel by viewModels()
+    private val viewModel: UserViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,6 +63,7 @@ class LoginFragment: BaseFragment() {
                 binding.loginPassword.text.toString()
             ).takeIf { it.data?.data != null }.let {
                 viewModel.storeUser(it!!.data!!.data, it.payload)
+                it.payload
             }
         }
     }
