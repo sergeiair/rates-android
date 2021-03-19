@@ -18,6 +18,7 @@ import com.sz.ratespal.utils.Print
 import com.sz.ratespal.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class OverviewFragment: BaseFragment() {
@@ -55,8 +56,35 @@ class OverviewFragment: BaseFragment() {
     }
 
     private fun prepareChart() {
+        val values = mutableListOf<Entry>()
 
-        val values = ArrayList<Entry>()
+        for (i in 0 until 50) {
+            val `val` = (Math.random() * (3 + 1)).toFloat() + 20
+            values.add(Entry(i.toFloat(), `val`))
+        }
+
+        val set1 = LineDataSet(values, "DataSet 1")
+
+        set1.mode = LineDataSet.Mode.CUBIC_BEZIER
+        set1.cubicIntensity = 0.2f
+        set1.setDrawFilled(true)
+        set1.setDrawCircles(false)
+        set1.lineWidth = 1.8f
+        set1.circleRadius = 4f
+        set1.setCircleColor(Color.WHITE)
+        set1.highLightColor = Color.rgb(244, 117, 117)
+        set1.color = Color.WHITE
+        set1.fillColor = Color.WHITE
+        set1.fillAlpha = 100
+        set1.setDrawHorizontalHighlightIndicator(false)
+        set1.fillFormatter =
+            IFillFormatter { dataSet, dataProvider -> binding.ratesChart.getAxisLeft().getAxisMinimum() }
+
+        binding.ratesChart.data = LineData(set1)
+
+
+
+   /*     val values = ArrayList<Entry>()
         for (i in 0 until 50) {
             val `val` = (Math.random() * (3 + 1)).toFloat() + 20
             values.add(Entry(i.toFloat(), `val`))
@@ -95,7 +123,7 @@ class OverviewFragment: BaseFragment() {
 
             // set data
             binding.ratesChart.setData(data)
-        }
+        }*/
     }
 
 }
