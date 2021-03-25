@@ -12,6 +12,7 @@ import com.sz.ratespal.api.sign.SignApiInteractor
 import com.sz.ratespal.databinding.FragmentLoginBinding
 import com.sz.ratespal.ui.base.BaseFragment
 import com.sz.ratespal.ui.shared.UserViewModel
+import com.sz.ratespal.utils.Print
 import com.sz.ratespal.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
@@ -52,7 +53,10 @@ class LoginFragment: BaseFragment() {
 
     override fun observe() {
         viewModel.user.observe(viewLifecycleOwner, Observer {
-            (activity as Navigator?)?.navigateToAuthorizedArea(it)
+            when(it.token.isEmpty()) {
+                true -> binding.root.visibility = View.VISIBLE
+                else -> (activity as Navigator?)?.navigateToAuthorizedArea(it)
+            }
         })
     }
 

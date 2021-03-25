@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/indent_5"
     android:background="@drawable/sign_gradient"
+    android:visibility="invisible"
     tools:context=".ui.login.LoginFragment">
 
         <androidx.appcompat.widget.AppCompatImageView

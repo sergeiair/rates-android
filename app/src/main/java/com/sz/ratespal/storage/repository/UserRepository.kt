@@ -13,6 +13,10 @@ class UserRepository @Inject constructor(
         return localDataSource.getUser()
     }
 
+    fun deleteUser() {
+        localDataSource.deleteUser()
+    }
+
     suspend fun insertUser(value: User) {
         localDataSource.insert(value)
     }

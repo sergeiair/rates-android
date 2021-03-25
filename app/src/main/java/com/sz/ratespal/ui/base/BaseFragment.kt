@@ -8,4 +8,6 @@ abstract class BaseFragment: Fragment() {
 
     abstract fun observe()
 
+    open fun prepareView() {}
+
 }

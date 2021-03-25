@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder
 import com.sz.ratespal.api.authorized.AuthorizedApiInteractor
 import com.sz.ratespal.api.authorized.AuthorizedApiService
 import com.sz.ratespal.api.interceptors.AddHeaderInterceptor
+import com.sz.ratespal.api.interceptors.ErrorsHandlingInterceptor
 import com.sz.ratespal.api.sign.SignApiInteractor
 import com.sz.ratespal.api.sign.SignApiService
 import com.sz.ratespal.storage.AppDatabase
@@ -29,7 +30,9 @@ object AppModule {
         .baseUrl("https://ratespal.me/api/")
         .client(
             OkHttpClient.Builder()
-                .addInterceptor(AddHeaderInterceptor()).build()
+                .addInterceptor(ErrorsHandlingInterceptor())
+                .addInterceptor(AddHeaderInterceptor())
+                .build()
         )
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()

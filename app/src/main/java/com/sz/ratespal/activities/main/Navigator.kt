@@ -8,4 +8,6 @@ interface Navigator {
 
     fun navigateToAuthorizedArea(user: User?)
 
+    fun logOut()
+
 }

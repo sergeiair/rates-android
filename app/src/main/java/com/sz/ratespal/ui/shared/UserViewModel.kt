@@ -29,5 +29,10 @@ class UserViewModel @ViewModelInject constructor(
         }
     }
 
+    fun deleteUser() {
+        App.token = null
+        repository.deleteUser()
+    }
+
 }
 
